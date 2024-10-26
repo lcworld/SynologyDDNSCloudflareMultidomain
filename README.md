@@ -114,6 +114,40 @@ For assistance with vi commands, see:
 
 	**Note:** For SRM users, you must connect to your device as root. No other username will allow these commands to run.
 
+* **Install using Task Scheduler**
+
+  This method is a workaround for the DSM update issue.
+
+  a. In your home directory, create a folder SynologyDDNSCloudflareMultidomain, and download the install script in it.
+ 
+  ```sh
+  mkdir SynologyDDNSCloudflareMultidomain
+  cd SynologyDDNSCloudflareMultidomain
+  wget https://raw.githubusercontent.com/lcworld/SynologyDDNSCloudflareMultidomain/master/install.sh -O install.sh
+  ```
+
+  Or use git clone
+
+  ```sh
+  git clone https://github.com/lcworld/SynologyDDNSCloudflareMultidomain.git
+  ```
+
+  b. Create the task in Task scheduler.
+   
+  Create an "Triggered Task" > "User-defined script"
+
+  * Name: SynologyDDNSCloudflareMultidomain
+  * User: root
+  * Run command (in task settings), change <login> by your login.
+  ```sh
+  bash /var/services/homes/<login>/SynologyDDNSCloudflareMultidomain/install.sh
+  ```
+
+  c. Execute the task manually.
+
+  To perform the installation.
+
+  
 3. **Update your DDNS settings:** 
 
 	 a. *For DSM Users:* Navigate to __Control Panel > External Access > DDNS__ then add new DDNS
