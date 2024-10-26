@@ -36,7 +36,7 @@ fi
 rm $TEMP_FILE
 
 # Step 5: Delete the script itself
-print_message "Deleting the installation script..."
-rm -- "$0"
+# print_message "Deleting the installation script..."
+# rm -- "$0"
 
 print_message "Installation completed."
